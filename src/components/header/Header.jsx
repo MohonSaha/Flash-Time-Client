@@ -2,15 +2,22 @@ import "./header.css";
 import logo from "../../assets/images/logos/quicktime_01-removebg-preview.png";
 import SearchIcon from "@mui/icons-material/Search";
 import Select from "../selectDropdown/Select";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 // import DonutLargeRoundedIcon from "@mui/icons-material/DonutLargeRounded";
 import SwapHorizontalCircleOutlinedIcon from "@mui/icons-material/SwapHorizontalCircleOutlined";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import DropdownMenu from "../dropdownMenu/DropdownMenu";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
+import Navbar from "../shared/navbar/Navbar";
 
 const Header = () => {
+  const [isOpenDropDown, setIsOpenDropDown] = useState(false);
+
   const categoriesNames = [
     "Clothing and Beauty",
     "Soft Drinks",
@@ -29,42 +36,69 @@ const Header = () => {
     "Pet food & toy",
   ];
 
+  const accountMenuLists = [
+    { menu: "My Account", icon: <PermIdentityOutlinedIcon /> },
+    {
+      menu: "Order Tracking",
+      icon: <LocationOnOutlinedIcon />,
+    },
+    {
+      menu: "My Voucher",
+      icon: <LocalOfferOutlinedIcon />,
+    },
+    {
+      menu: "My Wishlist",
+      icon: <FavoriteBorderIcon />,
+    },
+    { menu: "Setting", icon: <SettingsOutlinedIcon /> },
+    { menu: "Sign Out", icon: <LogoutOutlinedIcon /> },
+  ];
+
+  // eslint-disable-next-line no-unused-vars
   const [categories, setCategories] = useState(categoriesNames);
 
-  const countriesList = [];
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const countriesList = [
+    "Bangladesh",
+    "India",
+    "Pakistan",
+    "Nepal",
+    "Vhutan",
+    "USA",
+  ];
 
-  useEffect(() => {
-    const getCountry = async (url) => {
-      try {
-        const response = await fetch(url);
-        if (response.ok) {
-          const data = await response.json();
-          console.log(data.data); // Adjusted to match the API response structure
-          data.data.map((item) => {
-            countriesList.push(item.country);
-          });
-        } else {
-          console.error("Network response was not ok");
-        }
-      } catch (error) {
-        console.error("Fetch error:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const getCountry = async (url) => {
+  //     try {
+  //       const response = await fetch(url);
+  //       if (response.ok) {
+  //         const data = await response.json();
+  //         console.log(data.data); // Adjusted to match the API response structure
+  //         data.data.map((item) => {
+  //           countriesList.push(item.country);
+  //         });
+  //       } else {
+  //         console.error("Network response was not ok");
+  //       }
+  //     } catch (error) {
+  //       console.error("Fetch error:", error);
+  //     }
+  //   };
 
-    getCountry("https://countriesnow.space/api/v0.1/countries/");
-  }, [countriesList]);
+  //   getCountry("https://countriesnow.space/api/v0.1/countries/");
+  // }, [countriesList]);
 
   return (
     <div>
       <header>
         <div className="container-fluid">
-          <div className="grid grid-cols-10 items-center justify-center gap-5">
+          <div className="grid grid-cols-12 items-center justify-center gap-4">
             <div className="">
-              <img src={logo} alt="" width={190} />
+              <img src={logo} alt="" width={70} />
             </div>
 
-            <div className="col-span-4">
-              <div className="headerSearch flex items-center rounded-sm">
+            <div className="col-span-6">
+              <div className="headerSearch flex items-center rounded-md">
                 <Select data={categories} placeholder={"All Categories"} />
 
                 <div className="search">
@@ -78,7 +112,7 @@ const Header = () => {
             </div>
 
             <div className="col-span-5 flex items-center">
-              <div className=" flex items-center">
+              <div className="ml-auto flex items-center">
                 <div className="countryWrapper">
                   <Select
                     data={countriesList}
@@ -95,8 +129,8 @@ const Header = () => {
                   <li className="list-inline-item">
                     <span className="flex items-center">
                       <SwapHorizontalCircleOutlinedIcon
-                        style={{ fontSize: 22 }}
-                        className="mr-3"
+                        style={{ fontSize: 24 }}
+                        className="mb-2"
                       />
                       <span className="badge">3</span>
                       Compare
@@ -105,31 +139,41 @@ const Header = () => {
                   <li className="list-inline-item">
                     <span className="flex items-center">
                       <FavoriteBorderIcon
-                        style={{ fontSize: 22 }}
-                        className="mr-3"
+                        style={{ fontSize: 24 }}
+                        className="mb-2"
                       />
                       <span className="badge">3</span>
                       Wishlist
                     </span>
                   </li>
                   <li className="list-inline-item">
-                    <span className="flex items-center">
+                    <span className="flex items-center font-medium">
                       <ShoppingCartOutlinedIcon
-                        style={{ fontSize: 22 }}
-                        className="mr-3"
+                        style={{ fontSize: 24 }}
+                        className="mb-1"
                       />
                       <span className="badge">30</span>
                       Cart
                     </span>
                   </li>
                   <li className="list-inline-item">
-                    <span className="flex items-center">
+                    <span
+                      className="flex items-center"
+                      onClick={() => setIsOpenDropDown(!isOpenDropDown)}
+                    >
                       <PermIdentityOutlinedIcon
-                        style={{ fontSize: 22 }}
-                        className="mr-3"
+                        style={{ fontSize: 24 }}
+                        className="mb-2"
                       />
                       Account
                     </span>
+                    {isOpenDropDown !== false && (
+                      <DropdownMenu
+                        width={"180px"}
+                        menuItem={accountMenuLists}
+                        setIsOpenDropDown={setIsOpenDropDown}
+                      />
+                    )}
                   </li>
                 </ul>
               </div>
@@ -137,6 +181,8 @@ const Header = () => {
           </div>
         </div>
       </header>
+
+      <Navbar />
     </div>
   );
 };

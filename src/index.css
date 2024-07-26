@@ -7,3 +7,15 @@
   --primary-color: #279a65;
   --primary-light-color: #977187;
 }
+
+.container-fluid {
+  padding: 0px 30px;
+}
+
+.bg-flash {
+  background: #279a65 !important;
+}
+
+.text-flash {
+  color: #279a65 !important;
+}
