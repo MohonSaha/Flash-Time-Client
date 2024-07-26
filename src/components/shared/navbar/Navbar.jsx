@@ -3,7 +3,7 @@ import "./navbar.css";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import { Link } from "react-router-dom";
-// import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
+import HeadsetMicOutlinedIcon from "@mui/icons-material/HeadsetMicOutlined";
 
 const Navbar = () => {
   return (
@@ -72,7 +72,19 @@ const Navbar = () => {
               </ul>
             </nav>
           </div>
-          <div className="col-span-2"></div>
+          <div className="col-span-2 flex items-center justify-end">
+            <div className="phoneNo flex items-center justify-end">
+              <span>
+                <HeadsetMicOutlinedIcon className="text-4xl" />
+              </span>
+              <div className="ml-3 ">
+                <h3 className="text-flash font-semibold text-xl mb-0">
+                  01609-195463
+                </h3>
+                <small className="">24/7 Support Canter</small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
