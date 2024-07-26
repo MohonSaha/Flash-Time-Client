@@ -78,10 +78,6 @@ header .countryWrapper .openSelect {
   color: var(--primary-color) !important;
 }
 
-header .headerTabs {
-  /* padding-left: 8px; */
-}
-
 header .headerTabs li {
   position: relative;
   margin-left: 20px;
