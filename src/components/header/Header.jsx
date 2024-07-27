@@ -59,12 +59,14 @@ const Header = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const countriesList = [
+    "Afghanistan",
     "Bangladesh",
+    "Bhutan",
     "India",
-    "Pakistan",
+    "Maldives",
     "Nepal",
-    "Vhutan",
-    "USA",
+    "Pakistan",
+    "Sri Lanka",
   ];
 
   // useEffect(() => {

@@ -4,6 +4,7 @@ import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDown
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import { Link } from "react-router-dom";
 import HeadsetMicOutlinedIcon from "@mui/icons-material/HeadsetMicOutlined";
+import PageDropDownMenu from "../../dropDowns/PageDropDownMenu/PageDropDownMenu";
 
 const Navbar = () => {
   return (
@@ -63,6 +64,8 @@ const Navbar = () => {
                       Pages <KeyboardArrowDownOutlinedIcon />
                     </Link>
                   </Button>
+
+                  <PageDropDownMenu />
                 </li>
                 <li className="list-inline-item">
                   <Button>

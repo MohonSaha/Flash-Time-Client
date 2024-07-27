@@ -27,6 +27,10 @@
   color: rgba(0, 0, 0, 0.8) !important;
 }
 
+/* .nav nav ul li button:hover {
+  background-color: var(--primary-color-light);
+} */
+
 .nav nav ul li button a {
   color: rgba(0, 0, 0, 0.8) !important;
   font-size: 15px !important;
