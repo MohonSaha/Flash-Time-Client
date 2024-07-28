@@ -22,3 +22,24 @@ export const accountMenuLists = [
   { menu: "Setting", icon: <SettingsOutlinedIcon /> },
   { menu: "Sign Out", icon: <LogoutOutlinedIcon /> },
 ];
+
+export const megaMenuFruitLists = [
+  {
+    menu: "Fresh Vegetables",
+  },
+  {
+    menu: "Frozen Vegetables",
+  },
+  {
+    menu: "Seasonal Fruit",
+  },
+  {
+    menu: "Herbs & Seasonings",
+  },
+  {
+    menu: "Packaged Products",
+  },
+  {
+    menu: "Premium Fruits",
+  },
+];
