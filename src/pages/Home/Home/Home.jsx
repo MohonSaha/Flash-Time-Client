@@ -2,7 +2,7 @@ import CarouselSlider from "../Slider/Slider";
 
 const Home = () => {
   return (
-    <div className="container-fluid">
+    <div>
       <CarouselSlider />
     </div>
   );
