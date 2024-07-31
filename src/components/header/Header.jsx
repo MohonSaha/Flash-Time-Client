@@ -1,5 +1,5 @@
 import "./header.css";
-import logo from "../../assets/images/logos/quicktime_01-removebg-preview.png";
+import logo from "../../assets/images/logos/logo-2.png";
 import SearchIcon from "@mui/icons-material/Search";
 import Select from "../selectDropdown/Select";
 import { useState } from "react";
@@ -96,7 +96,7 @@ const Header = () => {
         <div className="container-fluid">
           <div className="grid grid-cols-12 items-center justify-center gap-4">
             <div className="">
-              <img src={logo} alt="" width={70} />
+              <img src={logo} alt="" width={80} />
             </div>
 
             <div className="col-span-6">

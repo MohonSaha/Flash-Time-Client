@@ -30,3 +30,7 @@
   font-weight: 700;
   margin-bottom: 25px;
 }
+
+.myTransition {
+  transition: all 0.3s ease-in-out;
+}
