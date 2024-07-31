@@ -1,0 +1,17 @@
+.Popularproduct {
+  margin-bottom: 200px;
+  padding: 30px 0px;
+}
+
+.Popularproduct .filterTab li a {
+  font-size: 17px;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  font-weight: 500;
+}
+
+.filterTab li a:hover {
+  color: var(--primary-color) !important;
+  transform: translateY(-10px);
+}
