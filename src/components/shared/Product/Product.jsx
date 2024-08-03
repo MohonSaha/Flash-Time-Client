@@ -1,16 +1,49 @@
 import "./Product.css";
 import p1 from "../../../assets/images/p1.jpg";
 import Rating from "@mui/material/Rating";
-import { Button } from "@mui/material";
+import {
+  Button,
+  keyframes,
+  styled,
+  Tooltip,
+  tooltipClasses,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import { CustomTooltip } from "../MyTooltip/MyTooltip";
+// Define the bounce keyframes
 
 const Product = () => {
   return (
     <div className="productThumb">
-      <div className="imageWrapper">
-        <img src={p1} alt="" />
-      </div>
+      <Link>
+        <div className="imageWrapper">
+          <img src={p1} alt="" />
+
+          <div className="overlay">
+            <ul className="mb-0 overlay-list">
+              <CustomTooltip title="Add To Withlist" placement="top" arrow>
+                <li>
+                  <FavoriteBorderOutlinedIcon />
+                </li>
+              </CustomTooltip>
+              <Tooltip title="Add To Compare" placement="top" arrow>
+                <li>
+                  <CompareArrowsOutlinedIcon />
+                </li>
+              </Tooltip>
+              <Tooltip title="Quick View" placement="top" arrow>
+                <li>
+                  <VisibilityOutlinedIcon />
+                </li>
+              </Tooltip>
+            </ul>
+          </div>
+        </div>
+      </Link>
       <div className="info">
         <span className="block catName">Snack</span>
         <h4 className="title">
