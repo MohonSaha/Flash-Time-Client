@@ -1,3 +1,4 @@
+import Product from "../../../components/shared/Product/Product";
 import "./PopularProduct.css";
 
 const PopularProduct = () => {
@@ -60,6 +61,54 @@ const PopularProduct = () => {
               </a>
             </li>
           </ul>
+        </div>
+
+        <div className="productRow grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-1  gap-4">
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
+          <div className="item">
+            <Product />
+          </div>
         </div>
       </div>
     </div>

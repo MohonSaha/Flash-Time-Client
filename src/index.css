@@ -6,7 +6,9 @@
   /* --primary-color: #6b063f; */
   --primary-color: #279a65;
   --primary-color-light: #80ceaa;
+  --primary-color-lighter: #b7f6d9;
   --primary-light-color: #977187;
+  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .container-fluid {
@@ -31,5 +33,5 @@
 }
 
 .myTransition {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out !important;
 }
