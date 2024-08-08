@@ -65,46 +65,46 @@ const PopularProduct = () => {
 
         <div className="productRow grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-1  gap-4">
           <div className="item">
-            <Product />
+            <Product value={"Hot"} />
+          </div>
+          <div className="item">
+            <Product value={"New"} />
+          </div>
+          <div className="item">
+            <Product value={"Sale"} />
+          </div>
+          <div className="item">
+            <Product value={"Featured"} />
           </div>
           <div className="item">
             <Product />
           </div>
           <div className="item">
-            <Product />
+            <Product value={"New"} />
+          </div>
+          <div className="item">
+            <Product value={"Sale"} />
           </div>
           <div className="item">
             <Product />
           </div>
           <div className="item">
-            <Product />
+            <Product value={"Hot"} />
           </div>
           <div className="item">
-            <Product />
+            <Product value={"New"} />
           </div>
           <div className="item">
-            <Product />
+            <Product value={"Sale"} />
           </div>
           <div className="item">
-            <Product />
+            <Product value={"Featured"} />
           </div>
           <div className="item">
-            <Product />
+            <Product value={"Hot"} />
           </div>
           <div className="item">
-            <Product />
-          </div>
-          <div className="item">
-            <Product />
-          </div>
-          <div className="item">
-            <Product />
-          </div>
-          <div className="item">
-            <Product />
-          </div>
-          <div className="item">
-            <Product />
+            <Product value={"New"} />
           </div>
           <div className="item">
             <Product />

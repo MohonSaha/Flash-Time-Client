@@ -1,13 +1,7 @@
 import "./Product.css";
 import p1 from "../../../assets/images/p1.jpg";
 import Rating from "@mui/material/Rating";
-import {
-  Button,
-  keyframes,
-  styled,
-  Tooltip,
-  tooltipClasses,
-} from "@mui/material";
+import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
@@ -16,9 +10,23 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { CustomTooltip } from "../MyTooltip/MyTooltip";
 // Define the bounce keyframes
 
-const Product = () => {
+const Product = ({ value }) => {
+  const badgeColors = {
+    Hot: "bg-red-500 text-white",
+    New: "bg-green-500 text-white",
+    Sale: "bg-blue-500 text-white",
+    Featured: "bg-[#f59758] text-white",
+    Default: "bg-gray-500 text-white", // Default color
+  };
+
+  const badgeClass = badgeColors[value] || badgeColors.Default;
+
   return (
     <div className="productThumb">
+      {value !== null && value !== undefined && (
+        <span className={`badge ${badgeClass}`}>{value}</span>
+      )}
+
       <Link>
         <div className="imageWrapper">
           <img src={p1} alt="" />
@@ -30,16 +38,16 @@ const Product = () => {
                   <FavoriteBorderOutlinedIcon />
                 </li>
               </CustomTooltip>
-              <Tooltip title="Add To Compare" placement="top" arrow>
+              <CustomTooltip title="Add To Compare" placement="top" arrow>
                 <li>
                   <CompareArrowsOutlinedIcon />
                 </li>
-              </Tooltip>
-              <Tooltip title="Quick View" placement="top" arrow>
+              </CustomTooltip>
+              <CustomTooltip title="Quick View" placement="top" arrow>
                 <li>
                   <VisibilityOutlinedIcon />
                 </li>
-              </Tooltip>
+              </CustomTooltip>
             </ul>
           </div>
         </div>
