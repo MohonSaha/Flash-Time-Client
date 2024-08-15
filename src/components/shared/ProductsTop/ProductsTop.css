@@ -1,0 +1,73 @@
+.topSelling_box {
+  /* cursor: pointer; */
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+  position: relative;
+}
+
+.topSelling_box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 98%;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease-in-out;
+}
+
+.topSelling_box:hover::after {
+  transform: scaleY(1); /* Reveals the line from top to bottom */
+  transform-origin: bottom; /* Animation direction from top to bottom */
+}
+
+.topSelling_box:hover {
+  transform: translateY(-3px);
+}
+
+.productItems img:hover {
+  transition: all 0.5s ease-in-out;
+  scale: 1.03;
+}
+
+.topSelling_box h5 {
+  font-size: 17px !important;
+}
+
+.topSelling_box .productItems img {
+  width: 30%;
+  height: 30%;
+}
+
+.productItems h5 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+
+.productItems .price {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+.productItems .oldPrice {
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.6;
+  color: #000;
+  text-decoration: line-through;
+}
+
+.productItems .ratingNumber {
+  opacity: 0.6;
+  color: #000;
+}
+
+.productItems .rattingWrapper .css-15befwp-MuiRating-root {
+  /* width: 20%; */
+  font-size: 1.2rem !important;
+}

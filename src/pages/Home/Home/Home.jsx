@@ -3,6 +3,7 @@ import CategoryTabSlider from "../../../components/ui/CategoryTabSlider/Category
 import CarouselSlider from "../../../components/ui/Slider/Slider";
 import DailyBest from "../DailyBest/DailyBest";
 import PopularProduct from "../PopularProduct/PopularProduct";
+import TopProducts from "../TopProducts/TopProducts";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Banner />
       <PopularProduct />
       <DailyBest />
+      <TopProducts />
     </div>
   );
 };

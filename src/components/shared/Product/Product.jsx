@@ -10,6 +10,7 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { CustomTooltip } from "../MyTooltip/MyTooltip";
 // Define the bounce keyframes
 
+// eslint-disable-next-line react/prop-types
 const Product = ({ value }) => {
   const badgeColors = {
     Hot: "bg-red-500 text-white",
