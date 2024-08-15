@@ -2,7 +2,7 @@ import "./header.css";
 import logo from "../../assets/images/logos/logo-2.png";
 import SearchIcon from "@mui/icons-material/Search";
 import Select from "../selectDropdown/Select";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 // import DonutLargeRoundedIcon from "@mui/icons-material/DonutLargeRounded";
 import SwapHorizontalCircleOutlinedIcon from "@mui/icons-material/SwapHorizontalCircleOutlined";
@@ -17,6 +17,33 @@ import Navbar from "../shared/navbar/Navbar";
 
 const Header = () => {
   const [isOpenDropDown, setIsOpenDropDown] = useState(false);
+  const navbarRef = useRef(null);
+  const placeholderRef = useRef(null);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (navbarRef.current && placeholderRef.current) {
+        const navbarTopOffset =
+          placeholderRef.current.getBoundingClientRect().top;
+
+        if (navbarTopOffset <= 0 && !isSticky) {
+          setIsSticky(true);
+        } else if (
+          window.scrollY <= placeholderRef.current.offsetTop &&
+          isSticky
+        ) {
+          setIsSticky(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isSticky]);
 
   const categoriesNames = [
     "Clothing and Beauty",
@@ -183,8 +210,11 @@ const Header = () => {
           </div>
         </div>
       </header>
-
-      <Navbar />
+      <div ref={placeholderRef}></div>{" "}
+      {/* Placeholder div for smooth transition */}
+      <div className={`navWrapper ${isSticky ? "sticky" : ""}`} ref={navbarRef}>
+        <Navbar />
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@
 .homeSlider {
   padding: 20px 0px;
   min-height: 300px !important;
+  margin-top: 20px;
 }
 
 .slider-container {

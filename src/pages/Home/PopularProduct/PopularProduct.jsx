@@ -2,6 +2,7 @@ import Product from "../../../components/shared/Product/Product";
 import "./PopularProduct.css";
 
 const PopularProduct = () => {
+  // eslint-disable-next-line no-unused-vars
   const categoriesNames = [
     "Clothing and Beauty",
     "Soft Drinks",
