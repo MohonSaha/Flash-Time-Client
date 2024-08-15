@@ -17,33 +17,18 @@ import Navbar from "../shared/navbar/Navbar";
 
 const Header = () => {
   const [isOpenDropDown, setIsOpenDropDown] = useState(false);
-  const navbarRef = useRef(null);
-  const placeholderRef = useRef(null);
-  const [isSticky, setIsSticky] = useState(false);
+  const headerRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (navbarRef.current && placeholderRef.current) {
-        const navbarTopOffset =
-          placeholderRef.current.getBoundingClientRect().top;
-
-        if (navbarTopOffset <= 0 && !isSticky) {
-          setIsSticky(true);
-        } else if (
-          window.scrollY <= placeholderRef.current.offsetTop &&
-          isSticky
-        ) {
-          setIsSticky(false);
-        }
+    window.addEventListener("scroll", () => {
+      let position = window.pageYOffset;
+      if (position > 100) {
+        headerRef.current.classList.add("fixed");
+      } else {
+        headerRef.current.classList.remove("fixed");
       }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isSticky]);
+    });
+  }, []);
 
   const categoriesNames = [
     "Clothing and Beauty",
@@ -118,104 +103,102 @@ const Header = () => {
   // }, [countriesList]);
 
   return (
-    <div>
-      <header>
-        <div className="container-fluid">
-          <div className="grid grid-cols-12 items-center justify-center gap-4">
-            <div className="">
-              <img src={logo} alt="" width={80} />
-            </div>
+    <>
+      <div ref={headerRef} className="headerWrapper">
+        <header>
+          <div className="container-fluid">
+            <div className="grid grid-cols-12 items-center justify-center gap-4">
+              <div className="">
+                <img src={logo} alt="" width={80} />
+              </div>
 
-            <div className="col-span-6">
-              <div className="headerSearch flex items-center rounded-md">
-                <Select data={categories} placeholder={"All Categories"} />
+              <div className="col-span-6">
+                <div className="headerSearch flex items-center rounded-md">
+                  <Select data={categories} placeholder={"All Categories"} />
 
-                <div className="search">
-                  <input type="text" placeholder="Search for items..." />
-                  <SearchIcon
-                    className="searchIcons cursor-pointer"
-                    icon={false}
-                  />
+                  <div className="search">
+                    <input type="text" placeholder="Search for items..." />
+                    <SearchIcon
+                      className="searchIcons cursor-pointer"
+                      icon={false}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-span-5 flex items-center">
-              <div className="ml-auto flex items-center">
-                <div className="countryWrapper">
-                  <Select
-                    data={countriesList}
-                    placeholder={"Your Location"}
-                    icon={
-                      <LocationOnOutlinedIcon
-                        style={{ opacity: 0.6, fontSize: 18, marginRight: 3 }}
-                      />
-                    }
-                  />
+              <div className="col-span-5 flex items-center">
+                <div className="ml-auto flex items-center">
+                  <div className="countryWrapper">
+                    <Select
+                      data={countriesList}
+                      placeholder={"Your Location"}
+                      icon={
+                        <LocationOnOutlinedIcon
+                          style={{ opacity: 0.6, fontSize: 18, marginRight: 3 }}
+                        />
+                      }
+                    />
+                  </div>
+
+                  <ul className="list list-inline mb-0 headerTabs flex items-center">
+                    <li className="list-inline-item">
+                      <span className="flex items-center">
+                        <SwapHorizontalCircleOutlinedIcon
+                          style={{ fontSize: 24 }}
+                          className="mb-2"
+                        />
+                        <span className="badge">3</span>
+                        Compare
+                      </span>
+                    </li>
+                    <li className="list-inline-item">
+                      <span className="flex items-center">
+                        <FavoriteBorderIcon
+                          style={{ fontSize: 24 }}
+                          className="mb-2"
+                        />
+                        <span className="badge">3</span>
+                        Wishlist
+                      </span>
+                    </li>
+                    <li className="list-inline-item">
+                      <span className="flex items-center font-medium">
+                        <ShoppingCartOutlinedIcon
+                          style={{ fontSize: 24 }}
+                          className="mb-1"
+                        />
+                        <span className="badge">30</span>
+                        Cart
+                      </span>
+                    </li>
+                    <li className="list-inline-item">
+                      <span
+                        className="flex items-center"
+                        onClick={() => setIsOpenDropDown(!isOpenDropDown)}
+                      >
+                        <PermIdentityOutlinedIcon
+                          style={{ fontSize: 24 }}
+                          className="mb-2"
+                        />
+                        Account
+                      </span>
+                      {isOpenDropDown !== false && (
+                        <DropdownMenu
+                          width={"180px"}
+                          menuItem={accountMenuLists}
+                          setIsOpenDropDown={setIsOpenDropDown}
+                        />
+                      )}
+                    </li>
+                  </ul>
                 </div>
-
-                <ul className="list list-inline mb-0 headerTabs flex items-center">
-                  <li className="list-inline-item">
-                    <span className="flex items-center">
-                      <SwapHorizontalCircleOutlinedIcon
-                        style={{ fontSize: 24 }}
-                        className="mb-2"
-                      />
-                      <span className="badge">3</span>
-                      Compare
-                    </span>
-                  </li>
-                  <li className="list-inline-item">
-                    <span className="flex items-center">
-                      <FavoriteBorderIcon
-                        style={{ fontSize: 24 }}
-                        className="mb-2"
-                      />
-                      <span className="badge">3</span>
-                      Wishlist
-                    </span>
-                  </li>
-                  <li className="list-inline-item">
-                    <span className="flex items-center font-medium">
-                      <ShoppingCartOutlinedIcon
-                        style={{ fontSize: 24 }}
-                        className="mb-1"
-                      />
-                      <span className="badge">30</span>
-                      Cart
-                    </span>
-                  </li>
-                  <li className="list-inline-item">
-                    <span
-                      className="flex items-center"
-                      onClick={() => setIsOpenDropDown(!isOpenDropDown)}
-                    >
-                      <PermIdentityOutlinedIcon
-                        style={{ fontSize: 24 }}
-                        className="mb-2"
-                      />
-                      Account
-                    </span>
-                    {isOpenDropDown !== false && (
-                      <DropdownMenu
-                        width={"180px"}
-                        menuItem={accountMenuLists}
-                        setIsOpenDropDown={setIsOpenDropDown}
-                      />
-                    )}
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </header>
-      <div ref={placeholderRef}></div>{" "}
-      {/* Placeholder div for smooth transition */}
-      <div className={`navWrapper ${isSticky ? "sticky" : ""}`} ref={navbarRef}>
+        </header>
         <Navbar />
       </div>
-    </div>
+    </>
   );
 };
 
