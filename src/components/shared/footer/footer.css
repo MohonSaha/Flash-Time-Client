@@ -1,0 +1,56 @@
+.footerWrapper {
+  margin-bottom: 200px;
+  padding: 20px 0px;
+}
+
+.footerWrapper .left-box img {
+  width: 80px;
+}
+
+footer .companyName {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+footer .companyName span {
+  color: var(--primary-color);
+}
+
+footer p,
+footer a {
+  font-size: 18px;
+}
+
+footer .address p {
+  font-size: 16px;
+}
+
+footer .address svg {
+  color: var(--primary-color);
+  margin-right: 3px;
+}
+
+footer .middle-box h3,
+footer .right-box h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+footer .middle-box ul li a {
+  color: black;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+footer .middle-box ul li a:hover {
+  color: var(--primary-color);
+  opacity: 1;
+  padding-left: 5px;
+}
+
+footer .right-box h3 {
+}
