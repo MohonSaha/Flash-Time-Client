@@ -1,6 +1,6 @@
 import "./NewsLetterSection.css";
 import banner from "../../../assets/images/banner-news.png";
-import NewsLetter from "../../../components/shared/newsletter/NewsLetter";
+import NewsLetter from "../../../components/ui/newsletter/NewsLetter";
 
 const NewsLetterSection = () => {
   return (

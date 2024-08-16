@@ -1,0 +1,24 @@
+.serviceBoxWrapper {
+  background-color: #f5f6fa;
+  padding: 20px 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.serviceBoxWrapper:hover img {
+  transform: translateY(-6px);
+}
+
+.serviceBoxWrapper img {
+  transition: all 0.3s ease-in-out;
+  width: 20%;
+}
+
+.serviceBoxWrapper h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.serviceBoxWrapper p {
+  color: #a5a4a4;
+}
