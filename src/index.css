@@ -9,6 +9,7 @@
   --primary-color-lighter: #b7f6d9;
   --primary-light-color: #977187;
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --banner-color: #d8f1e5;
 }
 
 .container-fluid {
@@ -20,6 +21,21 @@
   padding: 4px 8px !important;
   font-size: 17px !important;
   text-transform: capitalize !important;
+  color: white !important;
+}
+
+.btn-danger {
+  /* background: #f05757 !important; */
+  padding: 4px 8px !important;
+  font-size: 17px !important;
+  text-transform: capitalize !important;
+  color: #f05757 !important;
+  border: 1px solid #f05757 !important;
+}
+
+.btn-danger:hover {
+  transition: all 0.3s ease-in-out;
+  background: #f05757 !important;
   color: white !important;
 }
 

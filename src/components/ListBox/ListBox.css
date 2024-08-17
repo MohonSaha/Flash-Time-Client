@@ -1,0 +1,37 @@
+.listBox {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+}
+
+.listBox:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.033), 0 3px 6px rgba(0, 0, 0, 0.117);
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  transform: translateX(4px);
+}
+
+.listBox img {
+  width: 12%;
+  margin-right: 4px;
+}
+
+.listBox .totalItem {
+  margin-right: auto;
+}
+
+.listBox .totalItem p {
+  background: var(--primary-color-lighter);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

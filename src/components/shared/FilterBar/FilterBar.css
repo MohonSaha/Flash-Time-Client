@@ -1,0 +1,80 @@
+.filterbarCard {
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.117);
+}
+
+.filterbarCard h3 {
+  font-size: 22px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.filterbarCard h3::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #ccc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.filterbarCard h3::before {
+  content: "";
+  width: 30%;
+  height: 3px;
+  background: var(--primary-color-light);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.price-range {
+  font-size: 15px;
+  margin-top: -6px;
+}
+
+.filters {
+  margin-top: 15px;
+}
+
+.filters h5 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  opacity: 0.8;
+}
+
+.filters ul li {
+  transition: all 0.2s ease-in-out;
+}
+
+.filters ul li:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.filters ul li:hover svg {
+  color: var(--primary-color);
+}
+
+.filters .filterByColor ul,
+.filters .filterByBrand ul {
+  max-height: 150px;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin-left: -10px;
+}
+
+.filters .filterByBrand ul::-webkit-scrollbar,
+.filters .filterByColor ul::-webkit-scrollbar {
+  width: 7px !important;
+}
+.filters .filterByBrand ul::-webkit-scrollbar-thumb,
+.filters .filterByColor ul::-webkit-scrollbar-thumb {
+  background: #ccc !important;
+  border-radius: 40px !important;
+}
