@@ -8,13 +8,19 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import app1 from "../../../assets/images/app-1.jpg";
 import app2 from "../../../assets/images/app-2.jpg";
 import payment from "../../../assets/images/payment-1.png";
+import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
+import facebook from "../../../assets/images/facebook.png";
+import twitter from "../../../assets/images/twitter.png";
+import intra from "../../../assets/images/instra.png";
+import pinta from "../../../assets/images/pinta.png";
+import youtube from "../../../assets/images/youtube.png";
 
 const Footer = () => {
   return (
     <footer>
       <div className="footerWrapper">
         <div className="container-fluid">
-          <div className="grid grid-cols-12">
+          <div className="grid grid-cols-12 mb-10">
             <div className="col-span-3 left-box">
               <div className="flex items-center">
                 <Link>
@@ -148,6 +154,31 @@ const Footer = () => {
               <div>
                 <img src={payment} alt="" />
               </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div className="grid grid-cols-3 mt-10">
+            <div className="copyright">
+              Copyright © 2024 all rights reserved by Mr. X
+            </div>
+            <div className="flex flex-row items-center contact">
+              <PhoneInTalkOutlinedIcon />
+              <div>
+                <h2>01609-185463</h2>
+                <p>24/7 Support Center</p>
+              </div>
+            </div>
+            <div className="flex socials gap-2">
+              <h4 className="text-xl font-semibold text-slate-600">
+                Follow Us
+              </h4>
+              <img src={facebook} alt="" />
+              <img src={twitter} alt="" />
+              <img src={intra} alt="" />
+              <img src={pinta} alt="" />
+              <img src={youtube} alt="" />
             </div>
           </div>
         </div>
