@@ -3,7 +3,7 @@ import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <div className="">
       <div className="sidebarCard">
         <h3>Category</h3>
 

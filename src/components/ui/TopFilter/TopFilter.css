@@ -1,0 +1,22 @@
+/* .topFilterWrapper {
+} */
+.topFilterWrapper .filterNum {
+  color: var(--primary-color);
+}
+
+.topFilterWrapper .tab_ {
+  position: relative;
+}
+
+.topFilterWrapper .dropdownMenu {
+  position: absolute;
+  top: 120%;
+  right: 0%;
+  /* width: ; */
+  height: auto;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 15px 10px !important;
+  border-radius: 6px;
+  z-index: 12;
+}

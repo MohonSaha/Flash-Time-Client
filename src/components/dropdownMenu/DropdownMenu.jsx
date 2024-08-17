@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import "./dropdownMenu.css";
 import { ClickAwayListener } from "@mui/base/ClickAwayListener";
 
-const DropdownMenu = ({ width, menuItem, setIsOpenDropDown }) => {
+const DropdownMenu = ({ width, menuItem, setIsOpenDropDown, closeOutside }) => {
   const DropdownStyle = {
     width: width,
   };
@@ -11,13 +11,13 @@ const DropdownMenu = ({ width, menuItem, setIsOpenDropDown }) => {
   console.log(menuItem);
 
   return (
-    <ClickAwayListener onClickAway={() => setIsOpenDropDown(false)}>
+    <ClickAwayListener onClickAway={() => setIsOpenDropDown(!closeOutside)}>
       <ul className="dropdownMenu" style={DropdownStyle}>
         {menuItem.map((item, index) => {
           return (
             <li key={index}>
-              <Button>
-                {item.icon} {item.menu}
+              <Button onClick={() => setIsOpenDropDown(false)}>
+                {item?.icon} {item?.menu}
               </Button>
             </li>
           );

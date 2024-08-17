@@ -32,6 +32,11 @@
   max-width: 90%;
 }
 
+.sidebarWrapper img {
+  width: 100%;
+  border-radius: 18px;
+}
+
 .right-content {
-  max-width: 90%;
+  max-width: 100%;
 }

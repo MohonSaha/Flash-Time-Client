@@ -187,6 +187,7 @@ const Header = () => {
                           width={"180px"}
                           menuItem={accountMenuLists}
                           setIsOpenDropDown={setIsOpenDropDown}
+                          closeOutside={true}
                         />
                       )}
                     </li>
