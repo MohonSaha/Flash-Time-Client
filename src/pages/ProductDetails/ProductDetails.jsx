@@ -10,6 +10,9 @@ import { Link } from "react-router-dom";
 import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
+import InnerImageZoom from "react-inner-image-zoom";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
+import image from "../../assets/images/p1.jpg";
 
 const ProductDetails = () => {
   const breadcrumbsMenu = [
@@ -42,8 +45,16 @@ const ProductDetails = () => {
 
         <div className="grid grid-cols-10">
           <div className="col-span-8  productWrapper">
-            <div className="grid grid-cols-12">
-              <div className="col-span-5 productZoom">image</div>
+            <div className="grid grid-cols-12 gap-10">
+              <div className="col-span-5 productZoomWrapper">
+                <div className="productZoom mt-4">
+                  <InnerImageZoom
+                    src={image}
+                    zoomType="hover"
+                    className="img"
+                  />
+                </div>
+              </div>
               <div className="col-span-7 productInfo">
                 <div>
                   <h2 className="title">Seeds of Change Organic Quinoe</h2>
