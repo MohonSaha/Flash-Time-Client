@@ -1,0 +1,25 @@
+.breadcrumbs .item a,
+.breadcrumbs .item svg,
+.breadcrumbs .currentMenu p {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  opacity: 0.8;
+}
+
+.breadcrumbs .item svg {
+  font-size: 18px;
+}
+
+.breadcrumbs .item .icon svg {
+  font-size: 18px;
+  margin-right: 2px;
+  margin-bottom: 3px;
+  color: #000;
+  opacity: 0.6;
+}
+
+.breadcrumbs .item a:hover {
+  transition: all 0.2s ease-in-out;
+  color: var(--primary-color);
+}

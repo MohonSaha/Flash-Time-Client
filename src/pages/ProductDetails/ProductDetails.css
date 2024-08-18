@@ -1,0 +1,64 @@
+.detailsPage hr {
+  margin: 20px -23px 0 !important;
+}
+
+.detailsPage .sideWrapper .banner img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.detailsPage .productInfo .title {
+  font-size: 30px;
+  color: #000;
+  opacity: 0.8;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.productInfo .price {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.productInfo .oldPriceWrapper {
+  line-height: 1.4rem;
+  margin-left: 20px;
+}
+
+.productInfo .oldPrice {
+  font-size: 26px;
+  color: gray;
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.productInfo .oldPriceWrapper small {
+  color: var(--secondary-color);
+}
+
+.productInfo .description {
+  max-width: 75%;
+  margin-top: 4px;
+}
+
+.productInfo .desWrapper p {
+  font-weight: 500;
+  color: gray;
+  opacity: 1;
+}
+
+.productInfo .desWrapper a {
+  color: var(--primary-color);
+  opacity: 1 !important;
+}
+
+.productInfo .sellingOptions svg {
+  font-size: 19px;
+  margin-right: 6px;
+  color: var(--primary-color);
+}
+
+.productInfo .sellingOptions p {
+  font-weight: 400;
+}
