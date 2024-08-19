@@ -1,0 +1,45 @@
+.selectBox li {
+  border: 1px solid #ccc;
+  display: inline;
+  padding: 8px 12px;
+  border-radius: 2px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #000;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.selectBox li:hover {
+  background-color: #f1f1f1;
+  color: #000 !important;
+}
+
+.selectBox li.active {
+  border-color: var(--primary-color);
+}
+
+.checkMark {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-color);
+  clip-path: polygon(100% 30%, 30% 100%, 100% 100%);
+  /* clip-path: polygon(100% 45%, 46% 100%, 100% 100%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkMark::after {
+  content: "✓"; /* The check mark symbol */
+  color: white;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 14px;
+  margin-left: 19px;
+}

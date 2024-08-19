@@ -9,7 +9,8 @@
 
 .detailsPage .productZoom .img {
   width: 100%;
-  height: 430px;
+  /* height: 450px; */
+  height: auto;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 15px;
 }
@@ -75,4 +76,12 @@
 
 .productInfo .sellingOptions p {
   font-weight: 400;
+}
+
+.productInfo .variantWrapper h2 {
+  margin-bottom: 10px;
+  color: #000;
+  opacity: 0.8;
+  font-weight: 500;
+  font-size: 16px;
 }

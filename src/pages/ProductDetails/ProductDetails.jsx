@@ -12,9 +12,21 @@ import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import InnerImageZoom from "react-inner-image-zoom";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
-import image from "../../assets/images/p1.jpg";
+import ProductSlider from "../../components/ui/ProductSlider/ProductSlider";
+import { useState } from "react";
+import { colorVariant, ramVariant, sliderImages } from "../../Constant";
+import SelectBox from "../../components/ui/SelectBox/SelectBox";
 
 const ProductDetails = () => {
+  const [zoomImage, setZoomImage] = useState(
+    "https://www.jiomart.com/images/product/original/493665925/oneplus-nord-ce-3-lite-5g-256-gb-8-gb-ram-pastel-lime-mobile-phone-digital-o493665925-p600340967-0-202304101447.jpeg"
+  );
+
+  // eslint-disable-next-line no-unused-vars
+  const [bigImageSize, setBigImageSize] = useState([1000, 1000]);
+  // eslint-disable-next-line no-unused-vars
+  const [smlImageSize, setSmlImageSize] = useState([150, 150]);
+
   const breadcrumbsMenu = [
     {
       icon: <HomeOutlinedIcon />,
@@ -37,7 +49,7 @@ const ProductDetails = () => {
 
   return (
     <div className="detailsPage">
-      <div className="container-fluid">
+      <div className="container-fluid detailsContainer">
         <div className="my-5">
           <MyBreadcrumbs breadcrumbsMenu={breadcrumbsMenu}></MyBreadcrumbs>
           <hr className="" />
@@ -49,13 +61,21 @@ const ProductDetails = () => {
               <div className="col-span-5 productZoomWrapper">
                 <div className="productZoom mt-4">
                   <InnerImageZoom
-                    src={image}
+                    src={`${zoomImage}?im=Resize=(${bigImageSize[0]},${bigImageSize[1]})`}
                     zoomType="hover"
                     className="img"
                   />
                 </div>
+
+                <div className="productSliderWrapper mt-2">
+                  <ProductSlider
+                    smlImageSize={smlImageSize}
+                    sliderImages={sliderImages}
+                    setZoomImage={setZoomImage}
+                  />
+                </div>
               </div>
-              <div className="col-span-7 productInfo">
+              <div className="col-span-7 productInfo mt-1">
                 <div>
                   <h2 className="title">Seeds of Change Organic Quinoe</h2>
                   <div className="flex items-center space-x-2 rattingWrapper">
@@ -65,7 +85,12 @@ const ProductDetails = () => {
                       precision={0.5}
                       readOnly
                     />
-                    <span className="ratingNumber">(10 reviews)</span>
+                    <span className="ratingNumber">
+                      (10 reviews) |{" "}
+                      <Link className="text-blue-600">
+                        5 Answered Questions
+                      </Link>
+                    </span>
                   </div>
 
                   <div className="flex items-center my-6">
@@ -102,6 +127,17 @@ const ProductDetails = () => {
                         <CreditCardOutlinedIcon />
                         Cash on Delivery available
                       </p>
+                    </div>
+                  </div>
+
+                  <div className="variantWrapper">
+                    <div className="mt-4">
+                      <h2>Color Family</h2>
+                      <SelectBox variant={colorVariant} />
+                    </div>
+                    <div className="mt-6">
+                      <h2>Storage Capacity</h2>
+                      <SelectBox variant={ramVariant} />
                     </div>
                   </div>
                 </div>
