@@ -5,7 +5,7 @@ import banner from "../../assets/images/banner1.jpg";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import Sidebar from "../../components/shared/Sidebar/Sidebar";
 import NewProductSidebar from "../../components/shared/NewProductSidebar/NewProductSidebar";
-import { Rating } from "@mui/material";
+import { Button, Rating } from "@mui/material";
 import { Link } from "react-router-dom";
 import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
@@ -16,6 +16,11 @@ import ProductSlider from "../../components/ui/ProductSlider/ProductSlider";
 import { useState } from "react";
 import { colorVariant, ramVariant, sliderImages } from "../../Constant";
 import SelectBox from "../../components/ui/SelectBox/SelectBox";
+import Counter from "../../components/shared/Counter/Counter";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined";
+import { CustomTooltip } from "../../components/shared/MyTooltip/MyTooltip";
 
 const ProductDetails = () => {
   const [zoomImage, setZoomImage] = useState(
@@ -139,6 +144,40 @@ const ProductDetails = () => {
                       <h2>Storage Capacity</h2>
                       <SelectBox variant={ramVariant} />
                     </div>
+                  </div>
+
+                  <div className="counterWrapper mt-8  mb-4 flex items-center gap-5">
+                    <Counter />
+                    <p className="availablity text-lg text-slate-500">
+                      Availability:{" "}
+                      <span className="text-blue-600">
+                        16 products available
+                      </span>
+                    </p>
+                  </div>
+
+                  <div className="space-x-4 mt-8 cartButtomGroup">
+                    <Button className="btn-primary">
+                      <ShoppingCartOutlinedIcon />
+                      <span className="ml-2">Add to cart</span>
+                    </Button>
+                    <Button className="btn-primary">Buy New</Button>
+
+                    <CustomTooltip
+                      title="Add To Withlist"
+                      placement="top"
+                      arrow
+                    >
+                      <Button className="btn-primary-outline btn-move">
+                        <FavoriteBorderOutlinedIcon />
+                      </Button>
+                    </CustomTooltip>
+
+                    <CustomTooltip title="Add To Compare" placement="top" arrow>
+                      <Button className="btn-primary-outline btn-move">
+                        <CompareArrowsOutlinedIcon />
+                      </Button>
+                    </CustomTooltip>
                   </div>
                 </div>
               </div>

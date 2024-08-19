@@ -33,7 +33,7 @@ const ProductSlider = ({ smlImageSize, sliderImages, setZoomImage }) => {
               <img
                 // src={`https://www.jiomart.com/images/product/original/493665925/oneplus-nord-ce-3-lite-5g-256-gb-8-gb-ram-pastel-lime-mobile-phone-digital-o493665925-p600340967-0-202304101447.jpeg?im=Resize=(${smlImageSize[0]},${smlImageSize[1]})`}
                 src={`${item?.image}?im=Resize=(${smlImageSize[0]},${smlImageSize[1]})`}
-                onMouseOver={() => goto(item?.image)}
+                onClick={() => goto(item?.image)}
               />
             </div>
             // <div className="item">

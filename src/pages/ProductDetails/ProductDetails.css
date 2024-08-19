@@ -85,3 +85,11 @@
   font-weight: 500;
   font-size: 16px;
 }
+
+.productInfo .cartButtomGroup .btn-move {
+  transition: all 0.3s ease-in-out;
+}
+
+.productInfo .cartButtomGroup .btn-move:hover {
+  transform: translateY(-5px);
+}

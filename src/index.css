@@ -31,6 +31,37 @@
   color: white !important;
 }
 
+.btn-primary {
+  background: #279a64e4 !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 10px 12px !important;
+  font-size: 17px !important;
+  border: 1px solid #279a64e4 !important;
+  text-transform: capitalize !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: #279a65 !important;
+  border: 1px solid #279a65 !important;
+}
+
+.btn-primary-outline {
+  /* background: #f05757 !important; */
+  padding: 12px 12px !important;
+  font-size: 17px !important;
+  text-transform: capitalize !important;
+  color: #279a65 !important;
+  border: 1px solid #279a65 !important;
+}
+
+.btn-primary-outline:hover {
+  transition: all 0.3s ease-in-out;
+  background: #279a65 !important;
+  color: white !important;
+}
+
 .btn-danger {
   /* background: #f05757 !important; */
   padding: 4px 8px !important;
@@ -47,7 +78,6 @@
 }
 
 .btn-outline-gray {
-  /* background: #f05757 !important; */
   padding: 4px 8px !important;
   font-size: 17px !important;
   text-transform: capitalize !important;

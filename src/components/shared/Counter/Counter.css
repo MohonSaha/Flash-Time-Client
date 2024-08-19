@@ -1,0 +1,50 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.counterSection {
+  width: 100px;
+  height: 50px;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 8px;
+}
+
+.counterSection input {
+  width: 70px;
+  height: 25px;
+  padding: 5px;
+  padding-left: 15px !important;
+  border: 0px;
+  outline: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-color);
+  /* text-align: center; */
+}
+
+.counterSection {
+  position: relative;
+}
+
+.counterSection .arrow {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.counterSection .arrow.plus {
+  top: 0px;
+  right: 10px;
+}
+.counterSection .arrow.minus {
+  bottom: 0px;
+  right: 10px;
+}
