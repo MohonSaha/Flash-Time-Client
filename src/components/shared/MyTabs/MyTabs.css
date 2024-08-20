@@ -88,3 +88,111 @@
   font-size: 24px;
   text-align: center;
 }
+
+.customerReviewsBar {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 2px;
+  height: 300px;
+}
+
+.customerReviewsBar h3 {
+  font-size: 22px;
+  color: #000;
+  opacity: 0.8;
+}
+
+.customerReviewsBar h1 {
+  font-size: 36px;
+  margin-right: 5px;
+}
+
+.customerReviewsBar .css-15befwp-MuiRating-root {
+  font-size: 18px;
+}
+
+.customerReviewsBar .rattingWrapper {
+  margin-top: 10px;
+}
+
+.addReview h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.addReview .css-1qqgbpl-MuiRating-root {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.formGroup .formControll {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 4px 12px;
+}
+
+.reviewsWrapper h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.productName {
+  color: var(--primary-color);
+}
+
+.reviewsWrapper .reviewerName {
+  font-size: 18px;
+  color: #000;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.reviewerName span {
+  font-size: 14px;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  color: #000;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+.reviewsWrapper p {
+  color: rgb(99, 99, 99) !important;
+}
+
+.review .vendorImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.reviewsWrapper .css-15befwp-MuiRating-root {
+  font-size: 18px;
+  margin: 6px 0px;
+}
+
+.review .productImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  cursor: pointer;
+}
+
+.review {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.imageWarning {
+  border: 1px solid rgb(175, 175, 252);
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: rgb(175, 175, 252);
+}
+
+.imageWarning svg {
+  margin-right: 4px;
+}
