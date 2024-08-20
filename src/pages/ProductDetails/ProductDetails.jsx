@@ -22,6 +22,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined";
 import { CustomTooltip } from "../../components/shared/MyTooltip/MyTooltip";
 import Slider from "react-slick";
+import MyTabs from "../../components/shared/MyTabs/MyTabs";
 
 const ProductDetails = () => {
   const zoomSliderBig = useRef();
@@ -101,7 +102,6 @@ const ProductDetails = () => {
                   <ProductSlider
                     smlImageSize={smlImageSize}
                     sliderImages={sliderImages}
-                    // setZoomImage={setZoomImage}
                     zoomSliderBig={zoomSliderBig}
                   />
                 </div>
@@ -212,7 +212,7 @@ const ProductDetails = () => {
             {/* Product review tabs */}
 
             <div className="mt-8 detailsPageTabs mr-8">
-              <p>Tabs</p>
+              <MyTabs />
             </div>
           </div>
           <div className="col-span-2  sideWrapper">
