@@ -26,7 +26,11 @@
 }
 
 .productSlider .slick-current img {
-  border: 2px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.productSlider * {
+  outline: none !important;
 }
 
 .productSlider .slick-arrow.slick-next {

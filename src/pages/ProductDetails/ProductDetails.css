@@ -93,3 +93,9 @@
 .productInfo .cartButtomGroup .btn-move:hover {
   transform: translateY(-5px);
 }
+
+.detailsPageTabs {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 30px 50px;
+}

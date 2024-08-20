@@ -13,7 +13,7 @@ import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import InnerImageZoom from "react-inner-image-zoom";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 import ProductSlider from "../../components/ui/ProductSlider/ProductSlider";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { colorVariant, ramVariant, sliderImages } from "../../Constant";
 import SelectBox from "../../components/ui/SelectBox/SelectBox";
 import Counter from "../../components/shared/Counter/Counter";
@@ -21,11 +21,13 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined";
 import { CustomTooltip } from "../../components/shared/MyTooltip/MyTooltip";
+import Slider from "react-slick";
 
 const ProductDetails = () => {
-  const [zoomImage, setZoomImage] = useState(
-    "https://www.jiomart.com/images/product/original/493665925/oneplus-nord-ce-3-lite-5g-256-gb-8-gb-ram-pastel-lime-mobile-phone-digital-o493665925-p600340967-0-202304101447.jpeg"
-  );
+  const zoomSliderBig = useRef();
+  // const [zoomImage, setZoomImage] = useState(
+  //   "https://www.jiomart.com/images/product/original/493665925/oneplus-nord-ce-3-lite-5g-256-gb-8-gb-ram-pastel-lime-mobile-phone-digital-o493665925-p600340967-0-202304101447.jpeg"
+  // );
 
   // eslint-disable-next-line no-unused-vars
   const [bigImageSize, setBigImageSize] = useState([1000, 1000]);
@@ -52,6 +54,17 @@ const ProductDetails = () => {
     },
   ];
 
+  var settings = {
+    dots: false,
+    infinite: false,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: false,
+    arrows: false,
+    // autoplay: 1000,
+  };
+
   return (
     <div className="detailsPage">
       <div className="container-fluid detailsContainer">
@@ -61,22 +74,35 @@ const ProductDetails = () => {
         </div>
 
         <div className="grid grid-cols-10">
-          <div className="col-span-8  productWrapper">
+          <div className="col-span-8  productWrapper ">
             <div className="grid grid-cols-12 gap-10">
               <div className="col-span-5 productZoomWrapper">
                 <div className="productZoom mt-4">
-                  <InnerImageZoom
-                    src={`${zoomImage}?im=Resize=(${bigImageSize[0]},${bigImageSize[1]})`}
-                    zoomType="hover"
-                    className="img"
-                  />
+                  <Slider
+                    {...settings}
+                    className="zoomSliderBig"
+                    ref={zoomSliderBig}
+                  >
+                    {sliderImages.map((item, index) => {
+                      return (
+                        <div className="item" key={index}>
+                          <InnerImageZoom
+                            src={`${item?.image}?im=Resize=(${bigImageSize[0]},${bigImageSize[1]})`}
+                            zoomType="hover"
+                            className="img"
+                          />
+                        </div>
+                      );
+                    })}
+                  </Slider>
                 </div>
 
                 <div className="productSliderWrapper mt-2">
                   <ProductSlider
                     smlImageSize={smlImageSize}
                     sliderImages={sliderImages}
-                    setZoomImage={setZoomImage}
+                    // setZoomImage={setZoomImage}
+                    zoomSliderBig={zoomSliderBig}
                   />
                 </div>
               </div>
@@ -181,6 +207,12 @@ const ProductDetails = () => {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Product review tabs */}
+
+            <div className="mt-8 detailsPageTabs mr-8">
+              <p>Tabs</p>
             </div>
           </div>
           <div className="col-span-2  sideWrapper">
