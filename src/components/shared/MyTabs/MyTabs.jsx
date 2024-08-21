@@ -138,16 +138,16 @@ const MyTabs = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-7 addReview">
+            <div className="col-span-7 addReview -mt-2">
               <h2>Add your review</h2>
               <p>Your email address will not be published.</p>
-              <p className="text-red-500">
+              <p className=" purchaseAlert my-2">
                 Please{" "}
-                <span className="text-green-500">Purchage this product</span> to
-                write review!
+                <span className="text-green-500 ">Purchase this product</span>{" "}
+                to write a review!
               </p>
 
-              <div className="flex items-center mt-2">
+              <div className="flex items-center">
                 <p>Your rating:</p>
                 <Rating
                   name="simple-controlled"
@@ -161,22 +161,21 @@ const MyTabs = () => {
               <div>
                 <form action="">
                   <div className="formGroup">
-                    <div>
+                    <div className="mt-3">
                       <p>Review: </p>
                       <textarea
                         name=""
                         id=""
-                        className="formControll"
+                        className="formControll mt-[2px]"
                         disabled
                         placeholder="Write your review"
                       ></textarea>
                     </div>
 
-                    <div className="mt-4">
+                    <div className="mt-3">
                       <ImageUploader />
                     </div>
-
-                    <div className="flex items-center mt-3 mb-6 imageWarning">
+                    <div className="flex items-center mt-3 mb-4 imageWarning">
                       <InfoOutlinedIcon />
                       <small>
                         You can upload up to 6 photos, each photo maximum size

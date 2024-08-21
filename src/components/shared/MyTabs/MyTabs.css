@@ -120,6 +120,15 @@
   font-weight: 600;
 }
 
+.addReview p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 17px;
+}
+
+.addReview .purchaseAlert {
+  color: red !important;
+}
+
 .addReview .css-1qqgbpl-MuiRating-root {
   font-size: 20px;
   margin-left: 10px;
