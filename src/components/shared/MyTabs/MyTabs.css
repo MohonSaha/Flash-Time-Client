@@ -195,6 +195,10 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.review:last-child {
+  border-bottom: none;
+}
+
 .imageWarning {
   border: 1px solid rgb(175, 175, 252);
   padding: 8px 12px;

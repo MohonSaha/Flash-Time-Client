@@ -103,3 +103,62 @@ export const productInfo = [
   "Selfie Camera: 12 MP (wide) | SL 3D, (depth/biometrics sensor) | HDR, Cinematic mode (4K@24/30fps) | 4K@24/25/30/60fps, 1080p@25/30/60/120fps, gyro-EIS",
   "Battery Info: Li-Ion, non-removable; Type-C Wired Charging; 15W wireless (MagSafe)",
 ];
+
+export const accordionData = [
+  {
+    panel: "panel1",
+    title: "If anyone buy this product please give me some suggestion! ",
+    summary: "I am an accordion",
+    details:
+      "Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget maximus est, id dignissim quam.",
+  },
+  {
+    panel: "panel2",
+    title: "Users",
+    summary: "You are currently not an owner",
+    details:
+      "Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.",
+  },
+  {
+    panel: "panel3",
+    title: "Advanced settings",
+    summary: "Filtering has been entirely disabled for whole web server",
+    details:
+      "Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros, vitae egestas augue. Duis vel est augue.",
+  },
+  {
+    panel: "panel4",
+    title: "Personal data",
+    summary: "",
+    details:
+      "Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros, vitae egestas augue. Duis vel est augue.",
+  },
+  {
+    panel: "panel5",
+    title: "Personal data",
+    summary: "",
+    details:
+      "Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros, vitae egestas augue. Duis vel est augue.",
+  },
+  {
+    panel: "panel6",
+    title: "Personal data",
+    summary: "",
+    details:
+      "Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros, vitae egestas augue. Duis vel est augue.",
+  },
+  {
+    panel: "panel7",
+    title: "Personal data",
+    summary: "",
+    details:
+      "Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros, vitae egestas augue. Duis vel est augue.",
+  },
+  {
+    panel: "panel8",
+    title: "Personal data",
+    summary: "",
+    details:
+      "Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros, vitae egestas augue. Duis vel est augue.",
+  },
+];

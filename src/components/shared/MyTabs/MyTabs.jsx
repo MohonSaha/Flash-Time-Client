@@ -1,6 +1,6 @@
 import { Button, Rating } from "@mui/material";
 import "./MyTabs.css";
-import { productInfo, sliderImages } from "../../../Constant";
+import { accordionData, productInfo, sliderImages } from "../../../Constant";
 import { useState } from "react";
 import vendor from "../../../assets/images/profile-2.png";
 import { Link } from "react-router-dom";
@@ -8,11 +8,16 @@ import ForumIcon from "@mui/icons-material/Forum";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import ImageUploader from "../ImageUploader/ImageUploader";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import AccordionItem from "../../ui/MyAccordion/MyAccordion";
 
 const MyTabs = () => {
   const [activeTabs, setActiveTabs] = useState(0);
   const [value, setValue] = useState(2);
-  console.log(value);
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
     <div className="customTabs">
@@ -166,7 +171,7 @@ const MyTabs = () => {
                       <textarea
                         name=""
                         id=""
-                        className="formControll mt-[2px]"
+                        className="formControll mt-[2px] reviewTextArea"
                         disabled
                         placeholder="Write your review"
                       ></textarea>
@@ -338,6 +343,22 @@ const MyTabs = () => {
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {activeTabs === 3 && (
+        <div className="mt-12">
+          {accordionData.map((item, index) => (
+            <AccordionItem
+              key={index}
+              panel={item.panel}
+              expanded={expanded}
+              handleChange={handleChange}
+              title={item.title}
+              summary={item.summary}
+              details={item.details}
+            />
+          ))}
         </div>
       )}
     </div>
