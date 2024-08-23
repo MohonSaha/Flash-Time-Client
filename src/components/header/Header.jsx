@@ -14,6 +14,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
 import Navbar from "../shared/navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpenDropDown, setIsOpenDropDown] = useState(false);
@@ -162,14 +163,16 @@ const Header = () => {
                       </span>
                     </li>
                     <li className="list-inline-item">
-                      <span className="flex items-center font-medium">
-                        <ShoppingCartOutlinedIcon
-                          style={{ fontSize: 24 }}
-                          className="mb-1"
-                        />
-                        <span className="badge">30</span>
-                        Cart
-                      </span>
+                      <Link to="/cart">
+                        <span className="flex items-center font-medium">
+                          <ShoppingCartOutlinedIcon
+                            style={{ fontSize: 24 }}
+                            className="mb-1"
+                          />
+                          <span className="badge">30</span>
+                          Cart
+                        </span>
+                      </Link>
                     </li>
                     <li className="list-inline-item">
                       <span

@@ -1,0 +1,30 @@
+.cartSection {
+  width: 100%;
+  height: auto;
+  padding: 35px 0px;
+}
+
+.cartSection h1 {
+  margin-bottom: 0 !important;
+  line-height: 2.6rem;
+}
+
+.cartSection .cartNumber {
+  font-weight: 600;
+  color: #000;
+  opacity: 0.7;
+  margin-top: 0px !important;
+}
+
+.cartSection .clearCart button {
+  font-weight: 600 !important;
+  color: #000;
+  opacity: 0.7;
+  margin-top: 0px !important;
+  cursor: pointer;
+}
+
+.cartSection .clearCart svg {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
