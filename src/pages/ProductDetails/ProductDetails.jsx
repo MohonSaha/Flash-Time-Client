@@ -23,6 +23,7 @@ import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined
 import { CustomTooltip } from "../../components/shared/MyTooltip/MyTooltip";
 import Slider from "react-slick";
 import MyTabs from "../../components/shared/MyTabs/MyTabs";
+import RelatedProduct from "../../components/shared/RelatedProduct/RelatedProduct";
 
 const ProductDetails = () => {
   const zoomSliderBig = useRef();
@@ -227,6 +228,9 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mt-12">
+        <RelatedProduct />
       </div>
     </div>
   );

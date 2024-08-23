@@ -48,10 +48,6 @@ const DailyBest = () => {
           </div>
           <div className="col-span-9 mt-6">
             <Slider {...settings} className="productSlide">
-              {/* <div className="slider-item">
-                <img src={banner} alt="" />
-                <div className="info"></div>
-              </div> */}
               <div className="item">
                 <Product value={"New"} />
               </div>

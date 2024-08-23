@@ -1,0 +1,8 @@
+.relatedProduct {
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+
+.relatedProduct .productSlide .slick-slide {
+  padding: 0px 5px 0px 10px !important;
+}
