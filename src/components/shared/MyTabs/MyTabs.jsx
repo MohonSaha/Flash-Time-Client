@@ -1,4 +1,10 @@
-import { Button, Rating } from "@mui/material";
+import {
+  Button,
+  LinearProgress,
+  linearProgressClasses,
+  Rating,
+  styled,
+} from "@mui/material";
 import "./MyTabs.css";
 import { accordionData, productInfo, sliderImages } from "../../../Constant";
 import { useState } from "react";
@@ -9,6 +15,20 @@ import StorefrontIcon from "@mui/icons-material/Storefront";
 import ImageUploader from "../ImageUploader/ImageUploader";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import AccordionItem from "../../ui/MyAccordion/MyAccordion";
+
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+  height: 12,
+  width: 100,
+  borderRadius: 2,
+  [`&.${linearProgressClasses.colorPrimary}`]: {
+    backgroundColor:
+      theme.palette.grey[theme.palette.mode === "light" ? 200 : 800],
+  },
+  [`& .${linearProgressClasses.bar}`]: {
+    borderRadius: 2,
+    backgroundColor: theme.palette.mode === "light" ? "#ffb21b" : "#308fe8",
+  },
+}));
 
 const MyTabs = () => {
   const [activeTabs, setActiveTabs] = useState(0);
@@ -23,23 +43,35 @@ const MyTabs = () => {
     <div className="customTabs">
       <ul className="list-inline">
         <li className="list-inline-item">
-          <Button className="" onClick={() => setActiveTabs(0)}>
+          <Button
+            className={`${activeTabs === 0 && "active"}`}
+            onClick={() => setActiveTabs(0)}
+          >
             Description
           </Button>
         </li>
 
         <li className="list-inline-item">
-          <Button className="" onClick={() => setActiveTabs(1)}>
+          <Button
+            className={`${activeTabs === 1 && "active"}`}
+            onClick={() => setActiveTabs(1)}
+          >
             Vendor
           </Button>
         </li>
         <li className="list-inline-item">
-          <Button className="" onClick={() => setActiveTabs(2)}>
+          <Button
+            className={`${activeTabs === 2 && "active"}`}
+            onClick={() => setActiveTabs(2)}
+          >
             Reviews(5)
           </Button>
         </li>
         <li className="list-inline-item">
-          <Button className="" onClick={() => setActiveTabs(3)}>
+          <Button
+            className={`${activeTabs === 3 && "active"}`}
+            onClick={() => setActiveTabs(3)}
+          >
             Questions and Answers
           </Button>
         </li>
@@ -140,6 +172,34 @@ const MyTabs = () => {
                   <span className="ratingNumber text-slate-500">
                     (10 reviews)
                   </span>
+                </div>
+              </div>
+
+              <div className="space-y-2 mt-5">
+                <div className="flex items-center space-x-4 text-slate-500">
+                  <p>5 Stars</p>
+                  <BorderLinearProgress variant="determinate" value={30} />
+                  <p>30%</p>
+                </div>
+                <div className="flex items-center space-x-4 text-slate-500">
+                  <p>4 Stars</p>
+                  <BorderLinearProgress variant="determinate" value={50} />
+                  <p>50%</p>
+                </div>
+                <div className="flex items-center space-x-4 text-slate-500">
+                  <p>3 Stars</p>
+                  <BorderLinearProgress variant="determinate" value={15} />
+                  <p>15%</p>
+                </div>
+                <div className="flex items-center space-x-4 text-slate-500">
+                  <p>2 Stars</p>
+                  <BorderLinearProgress variant="determinate" value={0} />
+                  <p>0%</p>
+                </div>
+                <div className="flex items-center space-x-4 text-slate-500">
+                  <p>1 Stars</p>
+                  <BorderLinearProgress variant="determinate" value={5} />
+                  <p>5%</p>
                 </div>
               </div>
             </div>
