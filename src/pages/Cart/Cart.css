@@ -6,7 +6,7 @@
 
 .cartSection h1 {
   margin-bottom: 0 !important;
-  line-height: 2.6rem;
+  /* line-height: 2.8rem; */
 }
 
 .cartSection .cartNumber {
@@ -16,15 +16,13 @@
   margin-top: 0px !important;
 }
 
-.cartSection .clearCart button {
-  font-weight: 600 !important;
-  color: #000;
-  opacity: 0.7;
-  margin-top: 0px !important;
-  cursor: pointer;
-}
-
 .cartSection .clearCart svg {
   font-size: 20px;
   margin-bottom: 4px;
+}
+
+.cartHeader {
+  border: 1px solid #ccc;
+  padding: 4px 12px;
+  border-radius: 2px;
 }
