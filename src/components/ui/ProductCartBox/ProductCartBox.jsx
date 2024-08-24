@@ -1,4 +1,4 @@
-import { Button, Checkbox } from "@mui/material";
+import { Checkbox, IconButton } from "@mui/material";
 import "./ProductCartBox.css";
 import Counter from "../../shared/Counter/Counter";
 import image from "../../../assets/images/p1.jpg";
@@ -7,12 +7,13 @@ import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
 import { useState } from "react";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const ProductCartBox = () => {
   const productName =
-    "Symphony v139 Smart Phone RAM 2GB / ROM 32GB - Dual Nano SIM Mobile Phone";
+    "Symphony v139 Smart Phone RAM 2GB / ROM 32GB - Dual Nano SIM Mobile Phone.";
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -25,25 +26,27 @@ const ProductCartBox = () => {
         <div className="checkBox col-span-1 flex items-center">
           <Checkbox {...label} />
         </div>
-        <div className="productDetails col-span-6 flex items-center">
-          <div className="flex">
-            <img src={image} alt="" />
+        <div className="productDetails col-span-7 flex items-center">
+          <div className="flex items-center">
+            <img src={image} alt="" className="" />
             <div className="productInfo">
               <h5>
                 <p className="inline">
-                  {expanded ? productName : `${productName.slice(0, 34)}... `}
+                  {expanded ? productName : `${productName.slice(0, 49)} `}
                   <span
                     onClick={toggleExpand}
                     className="toggleExpandButton cursor-pointer text-slate-400"
                   >
                     {expanded ? (
                       <>
-                        <span>
-                          see less <KeyboardArrowUpOutlinedIcon />
+                        <span className="expandLessButton">
+                          <KeyboardArrowUpOutlinedIcon />
                         </span>
                       </>
                     ) : (
-                      "see more"
+                      <span className="expandButton">
+                        <KeyboardArrowDownOutlinedIcon />
+                      </span>
                     )}
                   </span>
                 </p>
@@ -60,18 +63,25 @@ const ProductCartBox = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-1 flex items-center priceWrapper">
+        <div className="col-span-2 flex items-center priceWrapper justify-center">
           <div>
-            <h2>$260</h2>
-            <div>
-              <DeleteForeverOutlinedIcon />
+            <h2>$2600</h2>
+            <h4>$2900</h4>
+            <div className="space-x-2 mt-2">
+              <IconButton aria-label="delete" size="small" color="success">
+                <FavoriteBorderOutlinedIcon />
+              </IconButton>
+
+              <IconButton aria-label="delete" size="small" color="secondary">
+                <DeleteForeverOutlinedIcon />
+              </IconButton>
             </div>
           </div>
         </div>
         <div className="col-span-2 flex items-center justify-center">
           <Counter />
         </div>
-        <div className="col-span-1 flex items-center">Price</div>
+        {/* <div className="col-span-1 flex items-center">Price</div> */}
       </div>
     </div>
   );

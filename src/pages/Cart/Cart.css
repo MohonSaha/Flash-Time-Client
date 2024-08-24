@@ -1,7 +1,7 @@
 .cartSection {
   width: 100%;
   height: auto;
-  padding: 35px 0px;
+  padding: 20px 0px;
 }
 
 .cartSection h1 {
@@ -21,8 +21,15 @@
   margin-bottom: 4px;
 }
 
+.cartSection .clearCart {
+  color: #000;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
 .cartHeader {
   border: 1px solid #ccc;
   padding: 4px 12px;
   border-radius: 2px;
+  padding-right: 26px;
 }

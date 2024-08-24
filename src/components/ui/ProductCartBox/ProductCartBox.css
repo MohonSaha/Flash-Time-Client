@@ -22,6 +22,7 @@
   color: #000;
   opacity: 0.8;
   margin: 4px 0px;
+  margin-top: -3px;
 }
 
 .productInfo .available {
@@ -46,5 +47,34 @@
 }
 
 .priceWrapper h2 {
-  font-size: 26px;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--primary-color);
+  line-height: 1.7rem;
+}
+
+.priceWrapper h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.priceWrapper svg {
+  color: #000;
+  opacity: 0.5;
+  font-size: 28px;
+}
+
+.expandButton {
+  border-radius: 40%;
+  background: rgb(219, 219, 219) !important;
+  margin-left: -16px;
+}
+
+.expandLessButton {
+  border-radius: 40%;
+  background: rgb(219, 219, 219) !important;
+  margin-left: 6px;
 }

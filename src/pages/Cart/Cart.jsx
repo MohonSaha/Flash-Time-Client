@@ -2,8 +2,10 @@ import MyBreadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import "./Cart.css";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import { Button } from "@mui/material";
+import { Checkbox } from "@mui/material";
 import ProductCartBox from "../../components/ui/ProductCartBox/ProductCartBox";
+
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Cart = () => {
   const breadcrumbsMenu = [
@@ -27,7 +29,7 @@ const Cart = () => {
       <div className="container-fluid">
         <div className="my-5">
           <MyBreadcrumbs breadcrumbsMenu={breadcrumbsMenu}></MyBreadcrumbs>
-          <hr className="" />
+          <hr className="mt-5 -mx-6" />
         </div>
       </div>
 
@@ -36,8 +38,9 @@ const Cart = () => {
           <div className="grid grid-cols-12">
             <div className="col-span-8">
               <div>
-                <h1 className="hd">Your Cart</h1>
-                <div className="flex cartHeader">
+                <h1 className="hd pb-2">Your Cart</h1>
+                <div className="flex cartHeader items-center pr-20">
+                  <Checkbox {...label} />
                   <p className="cartNumber">
                     There are <span className="text-flash">0</span> products in
                     your cart
@@ -53,6 +56,9 @@ const Cart = () => {
                 <div>
                   <div className="companyWrapper"></div>
                   <div className="">
+                    <ProductCartBox />
+                    <ProductCartBox />
+                    <ProductCartBox />
                     <ProductCartBox />
                   </div>
                 </div>
