@@ -1,7 +1,7 @@
 .cartSection {
   width: 100%;
   height: auto;
-  padding: 20px 0px;
+  padding: 10px 0px;
 }
 
 .cartSection h1 {
@@ -32,4 +32,34 @@
   padding: 4px 12px;
   border-radius: 2px;
   padding-right: 26px;
+}
+
+.cartSummaryWrapper {
+  margin-top: 15%;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.044), 0 3px 6px rgba(0, 0, 0, 0.067);
+  border-radius: 2px;
+}
+
+.cartSummary h4 {
+  font-size: 22px;
+}
+
+.cartSummary h5 {
+  font-size: 17px;
+  color: #000;
+  opacity: 0.7;
+}
+
+.cartSummary p {
+  font-size: 20px;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.cartSummaryWrapper .shipping svg {
+  color: #000;
+  opacity: 0.5;
+  margin-right: 10px;
 }

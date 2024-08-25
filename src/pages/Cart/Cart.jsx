@@ -2,8 +2,10 @@ import MyBreadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import "./Cart.css";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import { Checkbox } from "@mui/material";
+import { Button, Checkbox } from "@mui/material";
 import ProductCartBox from "../../components/ui/ProductCartBox/ProductCartBox";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import SearchBar from "../../components/shared/SearchBar/SearchBar";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -35,7 +37,7 @@ const Cart = () => {
 
       <section className="cartSection">
         <div className="container-fluid">
-          <div className="grid grid-cols-12">
+          <div className="grid grid-cols-12 gap-8">
             <div className="col-span-8">
               <div>
                 <h1 className="hd pb-2">Your Cart</h1>
@@ -65,7 +67,43 @@ const Cart = () => {
               </div>
             </div>
 
-            <div className="col-span-4"></div>
+            <div className="col-span-4">
+              <div className="cartSummaryWrapper">
+                <div>
+                  <p className="text-slate-400 mb-2">Location</p>
+                  <div className="mb-4 shipping">
+                    <LocationOnOutlinedIcon />
+                    <span className="text-sm">Add Shipping Address</span>
+                  </div>
+                  <hr />
+
+                  <div className="cartSummary mt-3">
+                    <h4>Order Summary</h4>
+
+                    <div className="flex items-center justify-between mt-3">
+                      <h5>Subtotal (3 items)</h5>
+                      <p>$ 16,647</p>
+                    </div>
+                    <div className="flex items-center justify-between mt-2 mb-8">
+                      <h5>Shipping Fee</h5>
+                      <p>$ 647</p>
+                    </div>
+
+                    <div className="w-[97%] mx-auto">
+                      <SearchBar placeholder={"Enter Voucher Code"} />
+                    </div>
+                    <div className="flex items-center justify-between mt-4 mb-8">
+                      <h5>Total</h5>
+                      <p>$ 16,647</p>
+                    </div>
+
+                    <Button className="bg-flash" fullWidth>
+                      Proceed To Checkout (4)
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

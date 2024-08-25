@@ -67,7 +67,7 @@ const ProductCartBox = () => {
           <div>
             <h2>$2600</h2>
             <h4>$2900</h4>
-            <div className="space-x-2 mt-2">
+            <div className="space-x-2 mt-1">
               <IconButton aria-label="delete" size="small" color="success">
                 <FavoriteBorderOutlinedIcon />
               </IconButton>

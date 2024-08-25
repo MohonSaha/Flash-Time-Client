@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-const SearchBar = () => {
+const SearchBar = ({ placeholder }) => {
   return (
     <div className="searchBar">
       <div className="col-span-6">
@@ -11,7 +11,10 @@ const SearchBar = () => {
             <input
               type="text"
               className="searchInput"
-              placeholder="Search for items..."
+              // placeholder="Search for items..."
+              placeholder={`${
+                placeholder ? placeholder : "Search for items..."
+              }`}
             />
             <Button className="searchIcons searchButton">
               <SearchIcon className=" cursor-pointer" icon={false} />

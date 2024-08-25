@@ -70,6 +70,7 @@
 .expandButton {
   border-radius: 40%;
   background: rgb(219, 219, 219) !important;
+  color: #000;
   margin-left: -16px;
 }
 
@@ -77,4 +78,5 @@
   border-radius: 40%;
   background: rgb(219, 219, 219) !important;
   margin-left: 6px;
+  color: #000;
 }
